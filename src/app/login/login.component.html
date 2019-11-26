@@ -1,0 +1,29 @@
+<div ng-app="angular-consulta-canina" ng-controller="myController" class="container">
+      <div class="login-container">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <label>Usuario</label>
+              <input type="text" name="usr" [(ngModel)]="usuario.usuario" required class="form-control">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div>
+              <label>Contraseña</label>
+              <input type="password" name="pass" [(ngModel)]="usuario.password" required class="form-control">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <button (click)="Autenticar()" ng-disabled="myForm.$invalid" class="btn btn-success pull-right">Iniciar sesión</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div *ngIf="error" ng-show="showError" class="alert alert-danger">Datos de usuario y/o contraseña inválidos</div>
+          </div>
+        </div>
+      </div>
+  </div>
